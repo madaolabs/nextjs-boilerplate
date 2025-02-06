@@ -70,7 +70,7 @@ export function Redeem() {
             const txhash = await sendTransaction(tx, connection).then(res => res).catch(console.error);
             console.log("txhash===>", txhash)
         } catch { }
-    }, [emptyAccounts])
+    }, [publicKey, emptyAccounts, connection, sendTransaction])
 
     return (
         <div className="pt-6">
