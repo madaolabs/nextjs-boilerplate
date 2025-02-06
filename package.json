@@ -13,6 +13,19 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.1.1",
+    "@mui/icons-material": "^6.4.3",
+    "@mui/material": "^6.4.3",
+    "@solana/spl-token": "^0.4.12",
+    "@solana/wallet-adapter-base": "^0.9.23",
+    "@solana/wallet-adapter-coinbase": "^0.1.19",
+    "@solana/wallet-adapter-phantom": "^0.9.24",
+    "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/wallet-adapter-react-ui": "^0.9.35",
+    "@solana/web3.js": "^1.98.0",
+    "ethers": "^6.13.5",
     "next": "15.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
