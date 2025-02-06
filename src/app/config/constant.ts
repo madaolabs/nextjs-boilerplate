@@ -1,0 +1,1 @@
+export const endpoint = "https://mainnet.helius-rpc.com/?api-key=2afde2b7-927b-4dfc-82fa-ffb1930148dc"
