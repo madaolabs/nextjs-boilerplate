@@ -11,7 +11,8 @@ import '@fontsource/roboto/700.css';
 
 export const metadata: Metadata = {
   title: "Earn SOL",
-  description: "Earn SOL using AI",
+  description: "Various ways to earn SOL",
+  keywords: "reclaim sol,redeem sol"
 };
 
 export default function RootLayout({
