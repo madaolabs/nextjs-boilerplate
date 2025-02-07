@@ -53,7 +53,7 @@ export function Redeem() {
 
     useEffect(() => {
         scanEmptyAccount();
-    }, [connection, publicKey])
+    }, [scanEmptyAccount])
 
     const claimSol = useMemo(() => {
         return emptyAccounts.reduce((prev, item) => { return item.account.lamports + prev }, 0);
@@ -86,12 +86,13 @@ export function Redeem() {
             setShowReclaimRes("success");
             setReclaimResMsg("Transaction Successful")
         } catch (error) {
+            const { message } = error as Error;
             setShowReclaimRes("fail");
-            setReclaimResMsg("Transaction Failure")
+            setReclaimResMsg("Transaction Failure: " + message);
         } finally {
             scanEmptyAccount()
         }
-    }, [publicKey, emptyAccounts, connection, claimSol, sendTransaction])
+    }, [publicKey, emptyAccounts, connection, claimSol, sendTransaction, scanEmptyAccount])
 
     return (
         <div className="pt-6">
