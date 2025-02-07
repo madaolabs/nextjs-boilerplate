@@ -11,7 +11,7 @@ import {
 
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { endpoint } from "../config/constant";
+import { Endpoint } from "../config/constant";
 
 export default function AppWalletProvider({
     children,
@@ -28,7 +28,7 @@ export default function AppWalletProvider({
     );
 
     return (
-        <ConnectionProvider endpoint={endpoint}>
+        <ConnectionProvider endpoint={Endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>
                     {/* <WalletMultiButton /> */}

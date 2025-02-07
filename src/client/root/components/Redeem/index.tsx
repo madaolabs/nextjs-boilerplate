@@ -7,10 +7,11 @@ import Button from '@mui/material/Button';
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { PublicKey, Transaction, SystemProgram, type AccountInfo } from '@solana/web3.js'
 import { TOKEN_PROGRAM_ID, createCloseAccountInstruction } from "@solana/spl-token";
-import { Typography } from "@mui/material";
+import { Snackbar, Typography } from "@mui/material";
 import { formatUnits } from "ethers";
+import { HelperAddress } from "@/app/config/constant";
 
-const HELPER_ADDRESS = new PublicKey("GodAprj8DdorNAVLNtwyEEZMN6Cmdjzw2nsbRr4v7zEL")
+const HELPER_ACCOUNT = new PublicKey(HelperAddress)
 
 
 export function Redeem() {
@@ -21,8 +22,10 @@ export function Redeem() {
         pubkey: PublicKey;
     }>[]>([]);
     const [scanLoading, setScanLoading] = useState(false);
+    const [showReclaimRes, setShowReclaimRes] = useState("");
+    const [reclaimResMsg, setReclaimResMsg] = useState("");
 
-    useEffect(() => {
+    const scanEmptyAccount = useCallback(async () => {
         if (!publicKey) return;
         setScanLoading(true);
         connection.getTokenAccountsByOwner(publicKey, { programId: TOKEN_PROGRAM_ID }).then(tokenAccounts => {
@@ -46,7 +49,10 @@ export function Redeem() {
         }).finally(() => {
             setScanLoading(false);
         })
+    }, [connection, publicKey])
 
+    useEffect(() => {
+        scanEmptyAccount();
     }, [connection, publicKey])
 
     const claimSol = useMemo(() => {
@@ -68,15 +74,23 @@ export function Redeem() {
         tx.add(
             SystemProgram.transfer({
                 fromPubkey: publicKey,
-                toPubkey: HELPER_ADDRESS,
-                lamports: Math.fround(claimSol * 0.1)
+                toPubkey: HELPER_ACCOUNT,
+                lamports: BigInt(Math.fround(claimSol * 0.1))
             })
         )
 
         try {
-            const txhash = await sendTransaction(tx, connection).then(res => res).catch(console.error);
-            console.log("txhash===>", txhash)
-        } catch { }
+            const txhash = await sendTransaction(tx, connection);
+            console.log("txhash===>", txhash);
+
+            setShowReclaimRes("success");
+            setReclaimResMsg("Transaction Successful")
+        } catch (error) {
+            setShowReclaimRes("fail");
+            setReclaimResMsg("Transaction Failure")
+        } finally {
+            scanEmptyAccount()
+        }
     }, [publicKey, emptyAccounts, connection, claimSol, sendTransaction])
 
     return (
@@ -108,7 +122,9 @@ export function Redeem() {
                     </Alert>
                 </div>
             </div>
-
+            <Snackbar open={showReclaimRes !== ""} autoHideDuration={6000} onClose={() => setShowReclaimRes("")}>
+                <Alert severity={showReclaimRes === "success" ? "info" : "error"}>{reclaimResMsg}</Alert>
+            </Snackbar>
         </div>
     )
 }
