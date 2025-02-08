@@ -98,7 +98,7 @@ export function Redeem() {
         <div className="pt-6">
             <div className="flex flex-col items-center">
                 <div className="lg:w-1/3 md:w-2/3 w-full">
-                    <Typography variant="h3" align="center" classes={{ root: "!font-bold text-[#00A76F]" }}>
+                    <Typography variant="h1" align="center" classes={{ root: "!font-bold !text-4xl text-[#00A76F]" }}>
                         Reclaim your forgotten SOL
                     </Typography>
                 </div>
