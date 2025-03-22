@@ -9,9 +9,10 @@ import {
     WalletModalProvider,
 } from "@solana/wallet-adapter-react-ui";
 
+
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { Endpoint } from "../config/constant";
+import { Endpoint } from "../../../config/constant";
 
 export default function AppWalletProvider({
     children,
