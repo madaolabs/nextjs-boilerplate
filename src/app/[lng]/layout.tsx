@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { dir } from "i18next";
 
 import AppWalletProvider from '@/app/[lng]/components/AppWalletProvider'
