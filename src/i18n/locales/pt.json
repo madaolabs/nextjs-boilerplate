@@ -17,11 +17,15 @@
     "willRedeem": "Prestes a resgatar",
     "featureTitle": "Como funciona",
     "feature1Title": "Conecte sua carteira",
-    "feature1Desc": "Conecte sua carteira Phantom com um único clique para acessar seus tokens SOL.",
-    "feature2Title": "Verifique seu saldo",
+    "feature1Desc": "Conecte sua carteira com um clique para acessar seus tokens SOL.",
+    "feature2Title": "Encontre seus SOL esquecidos",
     "feature2Desc": "Verifique seu saldo de SOL disponível de forma segura e em tempo real.",
     "feature3Title": "Resgate seus SOL",
     "feature3Desc": "Converta seus tokens SOL facilmente com nosso processo de resgate rápido e seguro.",
     "securityNote": "A segurança da sua carteira é nossa prioridade máxima. Nunca armazenamos suas chaves privadas.",
-    "learnMore": "Saiba mais sobre nossa plataforma"
+    "learnMore": "Saiba mais sobre nossa plataforma",
+    "txSuccess": "Transação bem-sucedida",
+    "txFailed": "Transação falhou",
+    "seoDescription": "Ganhe Solana (SOL) facilmente através de staking, mineração DeFi e tarefas diárias em nossa plataforma segura. Comece a ganhar recompensas em criptomoedas hoje com um investimento mínimo - perfeito para iniciantes e especialistas.",
+    "seoKeywords": "ganhar SOL, staking de Solana, mineração de SOL, recompensas em criptomoedas, renda passiva em Solana, yield farming de SOL, ganhos em criptomoedas, carteira de Solana, SOL grátis, recompensas DeFi"
 }

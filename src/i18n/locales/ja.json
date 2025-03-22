@@ -17,11 +17,15 @@
     "willRedeem": "引き換えようとしています",
     "featureTitle": "仕組み",
     "feature1Title": "ウォレットを接続",
-    "feature1Desc": "クリック一つでPhantomウォレットを接続し、SOLトークンにアクセスします。",
-    "feature2Title": "残高を確認",
-    "feature2Desc": "利用可能なSOL残高を安全かつリアルタイムで確認します。",
+    "feature1Desc": "クリック一つでウォレットを接続し、SOLトークンにアクセスします。",
+    "feature2Title": "忘れられたSOLを見つける",
+    "feature2Desc": "安全かつリアルタイムで利用可能なSOL残高を確認します。",
     "feature3Title": "SOLを引き換える",
-    "feature3Desc": "迅速かつ安全な引き換えプロセスで簡単にSOLトークンを変換します。",
-    "securityNote": "ウォレットのセキュリティは最優先事項です。秘密鍵を保存することはありません。",
-    "learnMore": "プラットフォームについて詳しく知る"
+    "feature3Desc": "迅速で安全な引き換えプロセスでSOLトークンを簡単に変換します。",
+    "securityNote": "ウォレットのセキュリティは最優先事項です。プライベートキーを保存することはありません。",
+    "learnMore": "プラットフォームについて詳しく知る",
+    "txSuccess": "取引成功",
+    "txFailed": "取引失敗",
+    "seoDescription": "ステーキング、DeFiマイニング、日常タスクを通じて、安全なプラットフォームで簡単にSolana（SOL）を獲得できます。最小限の投資で今日から暗号通貨の報酬を獲得しましょう - 初心者とエキスパートの両方に最適です。",
+    "seoKeywords": "SOLを稼ぐ, Solanaステーキング, SOLマイニング, 暗号通貨報酬, Solanaパッシブインカム, SOLイールドファーミング, 暗号通貨収益, Solanaウォレット, 無料SOL, DeFi報酬"
 }

@@ -8,6 +8,7 @@ import ja from './locales/ja.json'
 import pa from './locales/pa.json'
 import pt from './locales/pt.json'
 import ru from './locales/ru.json'
+import de from './locales/de.json'
 
 const dictionaries: Record<string, Record<string, string>> = {
     en,
@@ -20,6 +21,7 @@ const dictionaries: Record<string, Record<string, string>> = {
     pa,
     pt,
     ru,
+    de
 }
 
 export const getDictionary = (locale: string) => dictionaries[locale]

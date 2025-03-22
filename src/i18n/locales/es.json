@@ -17,11 +17,15 @@
     "willRedeem": "A punto de canjear",
     "featureTitle": "Cómo funciona",
     "feature1Title": "Conecta tu billetera",
-    "feature1Desc": "Conecta tu billetera Phantom con un solo clic para acceder a tus tokens SOL.",
-    "feature2Title": "Verifica tu saldo",
+    "feature1Desc": "Conecta tu billetera con un solo clic para acceder a tus tokens SOL.",
+    "feature2Title": "Encuentra tus SOL olvidados",
     "feature2Desc": "Consulta tu saldo de SOL disponible de forma segura y en tiempo real.",
     "feature3Title": "Canjea tus SOL",
     "feature3Desc": "Convierte tus tokens SOL fácilmente con nuestro proceso de canje rápido y seguro.",
-    "securityNote": "La seguridad de tu billetera es nuestra prioridad. Nunca almacenamos tus claves privadas.",
-    "learnMore": "Aprende más sobre nuestra plataforma"
+    "securityNote": "La seguridad de tu billetera es nuestra máxima prioridad. Nunca almacenamos tus claves privadas.",
+    "learnMore": "Aprende más sobre nuestra plataforma",
+    "txSuccess": "Transacción exitosa",
+    "txFailed": "Transacción fallida",
+    "seoDescription": "Gana Solana (SOL) fácilmente a través de staking, minería DeFi y tareas diarias en nuestra plataforma segura. Comienza a ganar recompensas en criptomonedas hoy con una inversión mínima, perfecto para principiantes y expertos.",
+    "seoKeywords": "ganar SOL, staking de Solana, minería de SOL, recompensas en criptomonedas, ingresos pasivos en Solana, yield farming de SOL, ganancias en criptomonedas, billetera de Solana, SOL gratis, recompensas DeFi"
 }

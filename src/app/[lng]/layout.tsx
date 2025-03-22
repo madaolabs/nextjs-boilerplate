@@ -14,11 +14,7 @@ import '@fontsource/roboto/700.css';
 import { fallbackLng, languages } from "@/i18n/settings";
 import { getDictionary } from "@/i18n";
 
-export const metadata: Metadata = {
-  title: "Earn SOL",
-  description: "Various ways to earn SOL",
-  keywords: "reclaim sol,redeem sol"
-};
+
 
 async function RootLayout({ children, params, }: React.PropsWithChildren<{ params: Promise<{ lng: string }> }>) {
   const { lng } = await params;
@@ -27,6 +23,8 @@ async function RootLayout({ children, params, }: React.PropsWithChildren<{ param
     <html lang={lng} dir={dir(lng)}>
       <head>
         <title>{t?.title}</title>
+        <meta name="description" content={t.seoDescription}></meta>
+        <meta name="keywords" content={t.seoKeywords}></meta>
         {languages.map((lang) => (
           <link
             key={lang}
