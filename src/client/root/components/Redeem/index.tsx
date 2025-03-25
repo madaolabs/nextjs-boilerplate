@@ -108,7 +108,10 @@ export function Redeem({ lng }: { lng: string }) {
             console.error('failed===>', message);
 
         } finally {
-            await scanEmptyAccount()
+            const timer = setTimeout(async () => {
+                await scanEmptyAccount()
+                clearTimeout(timer)
+            }, 3000)
         }
     }, [publicKey, emptyAccounts, connection, claimSol, sendTransaction, scanEmptyAccount])
 
