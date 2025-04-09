@@ -1,6 +1,5 @@
 import { dir } from "i18next";
 
-import AppWalletProvider from '@/app/[lng]/components/AppWalletProvider'
 import UITheme from '@/app/[lng]/components/UITheme'
 
 
@@ -29,23 +28,21 @@ async function RootLayout({ children, params, }: React.PropsWithChildren<{ param
             key={lang}
             rel="alternate"
             hrefLang={lang}
-            href={`https://earnsol.epochx.network/${lang}`}
+            href={`${process.env.NEXT_PUBLIC_SITE_URL}/${lang}`}
           />
         ))}
         <link
           rel="alternate"
           hrefLang="x-default"
-          href={`https://earnsol.epochx.network/${fallbackLng}`}
+          href={`${process.env.NEXT_PUBLIC_SITE_URL}/${fallbackLng}`}
         />
       </head>
       <body
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppWalletProvider>
           <UITheme>
             {children}
           </UITheme>
-        </AppWalletProvider>
 
       </body>
     </html>
