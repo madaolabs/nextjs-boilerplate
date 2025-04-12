@@ -10,19 +10,20 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { fallbackLng, languages } from "@/i18n/settings";
-import { getDictionary } from "@/i18n";
+import { getI18n } from "@/i18n/server";
+import { I18nProviderClient } from "@/i18n/client";
 
 
 
 async function RootLayout({ children, params, }: React.PropsWithChildren<{ params: Promise<{ lng: string }> }>) {
   const { lng } = await params;
-  const t = getDictionary(lng)
+  const t = await getI18n()
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
-        <title>{t?.title}</title>
-        <meta name="description" content={t.seoDescription}></meta>
-        <meta name="keywords" content={t.seoKeywords}></meta>
+        <title>{t('title')}</title>
+        <meta name="description" content={t('seoDescription')}></meta>
+        <meta name="keywords" content={t('seoKeywords')}></meta>
         {languages.map((lang) => (
           <link
             key={lang}
@@ -40,9 +41,11 @@ async function RootLayout({ children, params, }: React.PropsWithChildren<{ param
       <body
       // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <UITheme>
+        <UITheme>
+          <I18nProviderClient locale={lng}>
             {children}
-          </UITheme>
+          </I18nProviderClient>
+        </UITheme>
 
       </body>
     </html>

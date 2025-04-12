@@ -1,8 +1,12 @@
-import { NextResponse, NextRequest } from "next/server";
-import acceptLanguage from "accept-language";
+import { NextRequest } from "next/server";
+import { createI18nMiddleware } from 'next-international/middleware'
 import { fallbackLng, languages } from "@/i18n/settings";
 
-acceptLanguage.languages(languages);
+
+const I18nMiddleware = createI18nMiddleware({
+    locales: languages,
+    defaultLocale: fallbackLng
+})
 
 export const config = {
     matcher: [
@@ -12,19 +16,7 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
-    let lng;
-    lng = acceptLanguage.get(req.headers.get("Accept-Language"));
-    if (!lng) lng = fallbackLng;
 
-    // Redirect if lng in path is not supported
-    if (
-        !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
-        !req.nextUrl.pathname.startsWith("/_next")
-    ) {
-        return NextResponse.redirect(
-            new URL(`/${lng}${req.nextUrl.pathname}`, req.url)
-        );
-    }
+    return I18nMiddleware(req);
 
-    return NextResponse.next();
 } 
