@@ -3,7 +3,7 @@
 export const runtime = 'edge'
 
 export async function GET() {
-  const responseText = 'Hello World'
+  const responseText = 'OK'
 
   // In the edge runtime you can use Bindings that are available in your application
   // (for more details see:
@@ -16,6 +16,5 @@ export async function GET() {
   // await myKv.put('suffix', ' from a KV store!')
   // const suffix = await myKv.get('suffix')
   // return new Response(responseText + suffix)
-
   return new Response(responseText)
 }
